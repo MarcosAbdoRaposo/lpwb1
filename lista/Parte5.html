@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parte 5 da Lista        
+    </title>
+
+
+</head>
+<body>
+    <p><b>16. Dobrar Valores (map):</b>
+    </p>
+    <p>
+        Dado o array [1, 2, 3, 4, 5], use map para criar um novo array com cada número dobrado.
+    </p>
+    <script>
+        console.log("Exercíco 16:")
+        let valores = [1,2,3,4,5]
+        let dobrados = valores.map(numero => numero * 2)
+        console.log("Valores Dobrados:")
+        console.log(dobrados)
+
+
+    </script>
+    <p><b>17. Filtrar Números Pares (filter):</b>
+    </p>
+    <p>
+        Dado o array [10, 15, 20, 25, 30], use filter para criar um array apenas com números pares.
+    </p>
+    <script>
+        console.log("Exercíco 17:")
+        let original = [10, 15, 20, 25, 30]
+        let pares = original.filter(numero => numero % 2 === 0)
+        console.log("Valores Pares:")
+        console.log(pares)
+    </script>
+
+    <p> <b>18. Ordenação (sort): </b></p>
+    <p>
+        Dado o array [5, 1, 9, 3, 7], ordene-o em ordem crescente usando sort.
+            
+    </p>
+    <script>
+        console.log("Exercício 18:")
+        const foraDeOrdem = [5, 1, 9, 3, 7]
+
+        foraDeOrdem.sort()
+
+        console.log(foraDeOrdem)
+       
+    </script>
+
+       <p> <b>19. Encadeando Métodos:</b></p>
+    <p>
+        Dado o array [2, 5, 8, 11, 14], use filter para selecionar apenas os números maiores que 5 e depois map para multiplicá-los por 2. Mostre o resultado final.
+            
+    </p>
+    <script>
+        console.log("Exercício 19:")
+        const primitivo = [2, 5, 8, 11, 14]
+        const encadeado =  primitivo.filter(numero => numero > 5 ).map(numero => numero * 2)
+
+        console.log(encadeado)
+       
+    </script>
+
+</body>
+</html>
