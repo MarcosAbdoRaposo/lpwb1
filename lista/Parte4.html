@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parte 4 da Lista        
+    </title>
+
+
+</head>
+<body>
+    <p><b>13. Criação de Objeto:</b>
+    </p>
+    <p>
+        Crie um objeto carro com propriedades marca, modelo e ano. Mostre todas as propriedades no console, usando uma instrução console.log para cada uma das propriedades.
+    </p>
+    <script>
+        console.log("Exercíco 13:")
+        const carro = { marca:"Mercedes",
+                        modelo: "W164",
+                        ano: 2009,
+                        descricao : function() {
+                            return ( `marca : ${carro.marca}, modelo: ${carro.modelo}, ano   : ${carro.ano}`)
+                        }
+
+
+        }
+        console.log(`marca : ${carro.marca}`)
+        console.log(`modelo: ${carro.modelo}`)
+        console.log(`ano   : ${carro.ano}`)
+
+    </script>
+    <p><b>14. Método em Objeto:</b>
+    </p>
+    <p>
+        Adicione ao objeto carro um método descricao() que retorne uma string: "Marca: <marca>, Modelo: <modelo>, Ano: <ano>".<br>
+        Chame esse método e mostre o resultado no console.
+    </p>
+    <script>
+        console.log("Exercíco 14:")
+        console.log(carro.descricao())
+    </script>
+
+    <p> <b>15. Manipulação de Propriedades: </b></p>
+    <p>
+            Crie um objeto livro com título e autor.
+            Adicione dinamicamente a propriedade ano.
+            Altere o título.
+            Exclua a propriedade autor.
+            Mostre o objeto atualizado no console.
+            
+    </p>
+    <script>
+        const livro = {titulo: "Fortran Monitor",
+                        autor: "Tércio Passiti"
+        }
+
+        console.log("Exercício 15:")
+ 
+        // Adicionando o ano
+
+        livro['ano'] = 1984
+ 
+        
+        // Alterando o Título
+
+        livro.titulo = "Fortran IV"
+
+        // Excluindo o Autor
+
+        delete livro['autor']
+        console.log("Imprimindo o objeto livro sem o autor e com o Título Alterado")
+        console.log(livro)
+    </script>
+
+</body>
+</html>
