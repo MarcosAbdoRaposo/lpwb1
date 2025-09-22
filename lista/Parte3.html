@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parte 3 da Lista        
+    </title>
+
+
+</head>
+<body>
+    <p><b>9. Tabuada com for:</b>
+    </p>
+    <p>
+        Receba um número e mostre a tabuada de 1 a 10 usando for.
+    </p>
+    <script>
+        console.log("Exercíco 9:")
+        let base = Number(prompt("Informe um valor base:"))
+        let tabuada = 0
+        console.log("Imprimindo a Tabuada:")
+        for (let i = 1; i <=10; i++ ) {
+            tabuada = base * i
+            console.log(`${base} vezes ${i} é igual a ${tabuada}`)
+        }
+    </script>
+    <p><b>10. Contagem Regressiva com while:</b>
+    </p>
+    <p>
+        Mostre no console a contagem regressiva de 10 até 1 com while.
+    </p>
+    <script>
+        console.log("Exercíco 10:")
+        console.log("Imprimindo um While regressivo:")
+        let i = 10
+        while (i > 0) {
+            console.log(`O valor de í regressivo é ${i}`)
+            i--
+        }
+    </script>
+
+    <p> <b>11. Percorrendo Objetos com for...in: </b></p>
+    <p>
+          Crie um objeto pessoa com nome, idade e cidade. Use for...in para listar suas propriedades e valores.
+    </p>
+    <script>
+        console.log("Exercíco 11:")
+        console.log("Imprimindo as propriedades e valores de um objeto")
+
+        const pessoa = {nome:"Marcos Abdo Raposo",
+                        idade:60,
+                        cidade:"Rio de Janeiro"
+        }
+        for (let dados in pessoa) {
+            console.log(`${dados}:${pessoa[dados]}`)
+        }
+
+    </script>
+    <p> <b>12. Percorrendo Arrays com for...of: </b>
+    </p>
+    <p> Crie um array de frutas e use for...of para mostrar cada fruta no console.
+    </p>
+    <script>
+        console.log("Exercíco 12:")
+        console.log("Imprimindo as frutas de um array")
+
+        let frutas = ['banana','maça','pera','abacaxi','uva']
+
+        for (const fruta of frutas) {
+            console.log(fruta) // 
+        }
+    </script>
+
+</body>
+</html>
