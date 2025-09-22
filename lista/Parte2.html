@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parte 2 da Lista        
+    </title>
+
+
+</head>
+<body>
+    <p><b>5. Verificação de Idade:</b>
+    </p>
+    <p>
+        Peça ao usuário (com prompt) sua idade. <br>
+        Se for menor que 12, mostre "Criança". <br>
+        Se estiver entre 12 e 17, mostre "Adolescente". <br>
+        Se for maior ou igual a 18, mostre "Adulto".” <br>
+    </p>
+    <script>
+        let idade = Number(prompt("Informe uma idade:"))
+        if (idade < 12) {
+            alert("Criança")
+        } else {
+            if (idade < 17) {
+                alert("Adolescente")
+            } else {
+                alert("Adulto")
+            }
+
+        }
+
+    </script>
+    <p><b>6. Número Par ou Ímpar:</b>
+    </p>
+    <p>
+        Receba um número via prompt e use if/else para verificar se é par ou ímpar.
+    </p>
+    <script>
+        let numeroParImpar = Number(prompt("Informe um Número Inteiro:"))
+        if ((numeroParImpar % 2) == 0 ) {
+            alert(`O número ${numeroParImpar} é par.`)
+        } else {
+            alert(`O número ${numeroParImpar} é impar.`)
+        }        
+    </script>
+
+    <p> <b>7. Nota de Aluno: </b></p>
+    <p>
+          Receba uma nota de 0 a 10. <br>
+
+                >= 7: "Aprovado".<br>
+                >= 5 e < 7: "Recuperação". <br>
+                < 5: "Reprovado". <br>
+    </p>
+    <script>
+        let nota = Number(prompt("Informe a nota de um aluno:"))
+        if (nota < 5) {
+            alert("Reprovado")
+        } else {
+            if (nota < 7) {
+                alert("Recuperação")
+            } else {
+                alert("Aprovado")
+            }
+        }
+
+    </script>
+    <p> <b>8. Operador Ternário: </b>
+    </p>
+    <p> Receba um número via prompt e mostre no console: <br>
+        "Positivo" se maior que 0, "Negativo" se menor que 0, ou "Zero" caso contrário, usando apenas operador ternário.
+    </p>
+    <script>
+        let numero = Number(prompt("Informe um número inteiro positivo ou negativo "))
+        let msg = (numero == 0 ? "Zero" : ( numero > 0 ? "positivo" : "negativo" ) )
+
+        alert(msg) 
+        console.log(msg) // O enunciado do exercício fala em enviar para o console.
+
+    </script>
+
+</body>
+</html>
