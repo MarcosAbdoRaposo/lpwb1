@@ -16,11 +16,20 @@
         Depois, atribua um novo valor representando a idade daqui a 5 anos.<br>
         Mostre os dois valores no console: “Minha idade hoje é <idade> e daqui a 5 anos será <nova_idade>”
     </p>
+    <p id="resposta01">
+
+    </p>
     <script>
         let idade = 60
         let nova_idade = idade + 5
-        console.log(`Idade atual: ${idade}`)
-        console.log(`Idade daqui a 5 anos: ${nova_idade}`)
+
+        let msg1 = `Minha idade hoje é : ${idade}`
+        let msg2 = ` e daqui a 5 anos será: ${nova_idade}`
+        let msg3 = msg1 + " " + msg2
+        // Alterado pelo exercício 1
+        //console.log(msg1)
+        // console.log(msg2)
+        document.getElementById("resposta01").innerText = msg3;
     </script>
     <p><b>2. Uso de Const:</b>
     </p>
@@ -49,13 +58,17 @@
     <p>
           Crie três variáveis (let nome, let sobrenome, let anoNascimento) e mostre no console a frase: "Olá, meu nome é <nome completo> e eu nasci em <anoNascimento>". <nome completo> deve ser a concatenação de nome e sobrenome.
     </p>
+    <p id="resposta03">
+
+    </p>
     <script>
         let nome = "Marcos"
         let sobrenome = "Raposo"
         let anoNascimento = 1965
 
         let frase = `Olá, meu nome é ${nome} ${sobrenome} e eu nasci em ${anoNascimento}.`
-        console.log(frase)
+        // console.log(frase)
+        document.getElementById("resposta03").innerText = frase;
 
     </script>
     <p> <b>4. Diferença de Escopo: </b>
@@ -64,13 +77,21 @@
         Dentro do bloco, declare novamente let numero = 20. <br>
         Mostre o valor da variável dentro e fora do bloco com console.log.
     </p>
+     <p id="resposta04a">
+
+    </p>
+    <p id="resposta04b">
+
+    </p>
     <script>
         let numero = 10
         {let numero = 20
-            console.log(`Valor da variável dentro do bloco ${numero}`)
+            //console.log(`Valor da variável dentro do bloco ${numero}`)
+            document.getElementById("resposta04a").innerText = `Valor da variável dentro do bloco ${numero}`;
 
         }
-        console.log(`Valor da variável fora do bloco ${numero}`)
+        //console.log(`Valor da variável fora do bloco ${numero}`)
+        document.getElementById("resposta04b").innerText = `Valor da variável fora do bloco ${numero}`;
 
     </script>
 
