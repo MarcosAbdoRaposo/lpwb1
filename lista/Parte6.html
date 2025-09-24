@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parte 6 da Lista        
+    </title>
+
+
+</head>
+<body>
+    <h3>21. Controle de Fila de Atendimento:</h3>
+    <p>
+        Escreva um programa para controlar uma fila de atendimento, deve guardar o nome da pessoa ao clicar no botão "entrar na fila" e inserir no final de uma fila.<br>
+        Quando a pessoa for atendida, deve clicar no botão "atender" que vai retirar o nome da pessoa que está no primeiro lugar na fila.<br>
+        Também guarde a data e hora que a pessoa entrou na fila (use Date.now() para obter essa informação.<br>
+        Veja como formatar a data usando Intl.DateTimeFormat).<br>
+        Quando ela for atendida (retirada da fila), deve calcular quanto tempo levou para ser atendida.<br>
+        Use vetores para armazenar as informações.<br>
+        Para inserir no final da fila use o método "push()" e para remover do início da fila use o método "shift()".<br>
+        Crie um vetor para armazenar o nome e a hora (hora, minutos e segundos) que a pessoa entrou na fila.<br>
+        Em outro vetor armazene o nome, data e hora que pessoa entrou na fila, data e hora que foi atendida e quanto tempo demorou para ser atendida.<br>
+        Cada vez que uma pessoa entrar na fila ou for atendida deve exibir os dados armazenados nos dois vetores.<br>
+    </p>
+    <input type="text" id="campoNome" placeholder="Digite seu Nome">
+    <button onclick="colocarNaFila()">Entrar na Fila</button>
+    <button onclick="atenderDaFila()">Atender</button>
+
+    <h3>Fila para Atendimento</h3>
+    <i><p id="filaEntrada"></p></i>
+    <br>
+    <br>
+    <h3>Já Atendidos</h3>
+    <i><p id="filaSaida"></p></i>
+
+    <script>
+        let filaEntrada = []
+        let filaSaida = []
+
+        const opcoesHora = {
+            hour: '2-digit',
+            minute: '2-digit'
+        };
+        const formatador = new Intl.DateTimeFormat('pt-BR', opcoesHora);
+
+
+        // Utilizado para Criar um Objeto de Pessoa
+        function criarPessoa(nome) {
+            const pessoa = {};
+            pessoa.nome = nome;
+            pessoa.dtentrada = Date.now()
+            return pessoa
+
+        }
+
+        // Obtem o nome de uma pessoa que vai ser atendida
+        function obterNome(pessoa) {
+            return pessoa.nome;
+        }
+
+
+        // Obtem a data de entrada de uma pessoa
+        function obterDtEntrada(pessoa) {
+            return pessoa.dtentrada;
+        }
+
+        // Refresh na exeibição da fila de entrada
+        function refreshFilaEntrada() {
+            let msg = ""
+            for (const pessoaNaFila of filaEntrada) {
+                nomeNaFila = obterNome(pessoaNaFila)
+                dataFormatada = formatador.format(obterDtEntrada(pessoaNaFila));
+                msg += nomeNaFila + " "+dataFormatada+"<br>"
+            }
+            document.getElementById("filaEntrada").innerHTML = msg;
+
+        }
+
+
+        // Obtem o nome da pessoa na fila de atendimento
+        function obterNomeAtendimento(atendimento) {
+            return atendimento.nome;
+        }
+
+
+        // Obtem a Data de Entrada na fila de atendimento
+        function obterDtEntradaAtendimento(atendimento) {
+            return atendimento.dtentrada;
+        }
+
+        // Ontem a Data em que foi realizada o atendimento
+        function obterDtAtendimento(atendimento) {
+            return atendimento.dtatendimento;
+        }
+
+        // Obtem o tempo de atendimento
+        function obterTempoAtendimento(atendimento) {
+            return atendimento.tempo
+        }
+
+        // Refresh na fila de atendimentos realizados
+        function refreshFilaSaida() {
+            let msg = ""
+            let nomeNaFila = ""
+            let dtEntrada = ""
+            let dtAtendimento = ""
+            let tempoAtendimento = ""
+            
+            for (const pessoaAtendida of filaSaida) {
+                nomeNaFila = obterNomeAtendimento(pessoaAtendida)
+                dtEntrada = obterDtEntradaAtendimento(pessoaAtendida)
+                dtAtendimento = obterDtAtendimento(pessoaAtendida)
+                tempoAtendimento = (obterTempoAtendimento(pessoaAtendida)/1000).toFixed(2)
+                msg += nomeNaFila+ " - Entrada: "+formatador.format(dtEntrada)+" - Atendimento:"+formatador.format(dtAtendimento)+" Tempo de espera:"+tempoAtendimento+"(segundos)<br>";
+
+            }
+            document.getElementById("filaSaida").innerHTML = msg;            
+        }
+
+        // Cria um objeto atendimento, com os dados da pessoa sendo atendida
+        function criarAtendimento(pessoa) {
+            const atendimento = {};
+            const agora = Date.now()
+            const dtentrada = obterDtEntrada(pessoa)
+            const tempo = agora - dtentrada
+
+            atendimento.nome = obterNome(pessoa)
+            atendimento.dtentrada = dtentrada
+            atendimento.dtatendimento = agora
+            atendimento.tempo = tempo;
+
+            return atendimento
+
+        }
+
+        // Realiza o atendimento
+        function atenderDaFila() {
+            if (filaEntrada.length > 0) {
+                const pessoa = filaEntrada.shift() // Primeiro da Fila
+
+                const atendimento = criarAtendimento(pessoa);
+
+                filaSaida.push(atendimento) // Fim da Fila de Atendimento
+
+                refreshFilaEntrada()
+                refreshFilaSaida()
+            }
+
+
+        }
+
+        // Coloca uma pessoa na fila
+        function colocarNaFila() {
+            const campoIdade = document.getElementById("campoNome");
+            let nome = campoNome.value;
+
+            // Necessário informar o nome
+            if (nome !== '' ) {
+
+                const pessoa = criarPessoa(nome);
+
+                filaEntrada.push(pessoa)
+
+                refreshFilaEntrada(); 
+
+                campoNome.value = '';
+               
+            }
+
+        }
+    </script>
+
+    
+
+</body>
+</html>
