@@ -9,11 +9,11 @@
 
 </head>
 <body>
-    <p><b>13. Criação de Objeto:</b>
-    </p>
+    <h3>13. Criação de Objeto:</h3>
     <p>
         Crie um objeto carro com propriedades marca, modelo e ano. Mostre todas as propriedades no console, usando uma instrução console.log para cada uma das propriedades.
     </p>
+    <i><p id="resposta13"></p></i>
     <script>
         console.log("Exercíco 13:")
         const carro = { marca:"Mercedes",
@@ -25,52 +25,98 @@
 
 
         }
-        console.log(`marca : ${carro.marca}`)
-        console.log(`modelo: ${carro.modelo}`)
-        console.log(`ano   : ${carro.ano}`)
+        //console.log(`marca : ${carro.marca}`)
+        //console.log(`modelo: ${carro.modelo}`)
+        //console.log(`ano   : ${carro.ano}`)
+
+        let msg13 = `marca : ${carro.marca}<br>`;
+        msg13 = msg13 + `modelo: ${carro.modelo}<br>`;
+        msg13 = msg13 + `ano   : ${carro.ano}<br>`;
+        document.getElementById("resposta13").innerHTML = msg13;
 
     </script>
-    <p><b>14. Método em Objeto:</b>
-    </p>
+
+    <h3>14. Método em Objeto:</h3>
     <p>
         Adicione ao objeto carro um método descricao() que retorne uma string: "Marca: <marca>, Modelo: <modelo>, Ano: <ano>".<br>
         Chame esse método e mostre o resultado no console.
     </p>
+    <i><p id="resposta14"></p></i>
+
     <script>
-        console.log("Exercíco 14:")
-        console.log(carro.descricao())
+        //console.log("Exercíco 14:")
+        //console.log(carro.descricao())
+         document.getElementById("resposta14").innerHTML = carro.descricao();
     </script>
 
-    <p> <b>15. Manipulação de Propriedades: </b></p>
+    <h3>15. Manipulação de Propriedades: </h3>
+    
     <p>
-            Crie um objeto livro com título e autor.
-            Adicione dinamicamente a propriedade ano.
-            Altere o título.
-            Exclua a propriedade autor.
-            Mostre o objeto atualizado no console.
+            Crie um objeto livro com título e autor.<br>
+            Adicione dinamicamente a propriedade ano.<br>
+            Altere o título.<br>
+            Exclua a propriedade autor.<br>
+            Mostre o objeto atualizado no console.<br>
             
     </p>
+    <i><p id="resposta15"></p></i>
+
     <script>
         const livro = {titulo: "Fortran Monitor",
                         autor: "Tércio Passiti"
         }
+        let msg15 = "Resposta:<br><br>"
+        
+        msg15 += "Objeto Original:<br>"
+        for (prop in livro) {
+            msg15 += prop +':'+livro[prop]+"<br>"
+        }
+        msg15 += "<br>";
+        // console.log("Imprimindo o objeto livro sem o autor e com o Título Alterado")
+        // console.log(livro)
+        document.getElementById("resposta15").innerHTML = msg15;
 
-        console.log("Exercício 15:")
+        //console.log("Exercício 15:")
  
         // Adicionando o ano
 
         livro['ano'] = 1984
+
+        msg15 += "Objeto com a adição do Ano:<br>"
+        for (prop in livro) {
+            msg15 += prop +':'+livro[prop]+"<br>"
+        }
+        msg15 += "<br>";
+        document.getElementById("resposta15").innerHTML = msg15;
  
         
         // Alterando o Título
 
         livro.titulo = "Fortran IV"
 
+
+        msg15 += "Objeto com a alteração do Título:<br>"
+        for (prop in livro) {
+            msg15 += prop +':'+livro[prop]+"<br>"
+        }
+        msg15 += "<br>";
+        document.getElementById("resposta15").innerHTML = msg15;
+
         // Excluindo o Autor
 
         delete livro['autor']
-        console.log("Imprimindo o objeto livro sem o autor e com o Título Alterado")
-        console.log(livro)
+
+        // console.log("Imprimindo o objeto livro sem o autor e com o Título Alterado")
+        // console.log(livro)
+
+        msg15 += "Versão final do Objeto, com a exclusão do Autor:<br>"
+        for (prop in livro) {
+            msg15 += prop +':'+livro[prop]+"<br>"
+        }
+        msg15 += "<br>";
+        document.getElementById("resposta15").innerHTML = msg15;
+
+  
     </script>
 
 </body>

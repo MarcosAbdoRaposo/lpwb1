@@ -9,16 +9,15 @@
 
 </head>
 <body>
-    <p><b>1. Declaração com let:</b>
-    </p>
+    <h3>1. Declaração com let:</h3>
     <p>
         Crie uma variável let idade e atribua sua idade.<br>
         Depois, atribua um novo valor representando a idade daqui a 5 anos.<br>
         Mostre os dois valores no console: “Minha idade hoje é <idade> e daqui a 5 anos será <nova_idade>”
     </p>
-    <p id="resposta01">
+    <i><p id="resposta01">
+    </p></i>
 
-    </p>
     <script>
         let idade = 60
         let nova_idade = idade + 5
@@ -29,24 +28,29 @@
         // Alterado pelo exercício 1
         //console.log(msg1)
         // console.log(msg2)
-        document.getElementById("resposta01").innerText = msg3;
+        document.getElementById("resposta01").innerText = "Resposta: " + msg3;
     </script>
-    <p><b>2. Uso de Const:</b>
-    </p>
+
+    <h3>2. Uso de Const:</h3>
     <p>
         a. Declare uma constante PI com valor 3.14159. Tente atribuir outro valor a PI e veja o erro no console.
          Explique por que isso acontece. <br>
          
          b. Declare uma constante SemanasDoAno sem atribuir valor. 
            Na linha seguinte atribua o valor 52. O que ocorre?
-
-
     </p>
+    <i><p id="resposta02">
+        Resposta a: uma variável definida como Const não pode ter o valor alterado.<br>
+        <br>
+        Resposta b: não é possível declarar uma variável com const sem atribuir o valor.
+    </p></i>
+
     <script>
         console.log("Gerando erros pois o valor não pode ser alterado. Veja a documentação no corpo da função")
         const pi = 3.14159  // Inicialização
         pi = 4              // Erro, pois o valor não pode ser alterado
     </script>
+
     <script>
         console.log("Continua forçando a geração de erros: não pode criar uma constante sem atribuir o valor . Veja a documentação no corpo da função")
 
@@ -54,13 +58,14 @@
         SemandasDoAno= 52    // Erro, pois o valor não pode ser atribuido após a constante ser criada.
         
     </script>
-    <p> <b>3. Concatenação de Strings: </b></p>
+
+    <h3>3. Concatenação de Strings:</h3>
     <p>
           Crie três variáveis (let nome, let sobrenome, let anoNascimento) e mostre no console a frase: "Olá, meu nome é <nome completo> e eu nasci em <anoNascimento>". <nome completo> deve ser a concatenação de nome e sobrenome.
     </p>
-    <p id="resposta03">
+    <i><p id="resposta03">
 
-    </p>
+    </p></i>
     <script>
         let nome = "Marcos"
         let sobrenome = "Raposo"
@@ -68,7 +73,7 @@
 
         let frase = `Olá, meu nome é ${nome} ${sobrenome} e eu nasci em ${anoNascimento}.`
         // console.log(frase)
-        document.getElementById("resposta03").innerText = frase;
+        document.getElementById("resposta03").innerText = "Resposta: " +frase;
 
     </script>
     <p> <b>4. Diferença de Escopo: </b>
@@ -77,12 +82,13 @@
         Dentro do bloco, declare novamente let numero = 20. <br>
         Mostre o valor da variável dentro e fora do bloco com console.log.
     </p>
-     <p id="resposta04a">
+    <i><p>Respostas:</p></i>    
+     <i><p id="resposta04a">
 
-    </p>
-    <p id="resposta04b">
+    </p></i>
+    <i><p id="resposta04b">
 
-    </p>
+    </p></i>
     <script>
         let numero = 10
         {let numero = 20

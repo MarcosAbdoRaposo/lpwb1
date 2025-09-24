@@ -5,70 +5,96 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Parte 3 da Lista        
     </title>
-
-
 </head>
 <body>
-    <p><b>9. Tabuada com for:</b>
-    </p>
+    <h3>9. Tabuada com for:</h3>
     <p>
         Receba um número e mostre a tabuada de 1 a 10 usando for.
     </p>
+    <input type="text" id="campoBase" placeholder="Digite um Número Inteiro:">
+    <button onclick="gerarTabuada()">Clique aqui</button>
+    <i><p id="resposta09"></p></i>
+
     <script>
-        console.log("Exercíco 9:")
-        let base = Number(prompt("Informe um valor base:"))
-        let tabuada = 0
-        console.log("Imprimindo a Tabuada:")
-        for (let i = 1; i <=10; i++ ) {
-            tabuada = base * i
-            console.log(`${base} vezes ${i} é igual a ${tabuada}`)
+        function gerarTabuada() {
+            const campoBase = document.getElementById("campoBase");
+            let base = campoBase.value;
+            // let base = Number(prompt("Informe um valor base:"))
+            let tabuada = 0
+            let msgTabuada = ""
+            //console.log("Imprimindo a Tabuada:")
+            for (let i = 1; i <=10; i++ ) {
+                tabuada = base * i
+                // console.log(`${base} vezes ${i} é igual a ${tabuada}`)
+                msgTabuada = msgTabuada  + `${base} vezes ${i} é igual a ${tabuada}<br>`
+            }
+            document.getElementById("resposta09").innerHTML = msgTabuada;
         }
+
     </script>
-    <p><b>10. Contagem Regressiva com while:</b>
-    </p>
+
+    <h3>10. Contagem Regressiva com while:</h3>
     <p>
         Mostre no console a contagem regressiva de 10 até 1 com while.
     </p>
+    <i><p id="resposta10">
+    </p></i>
     <script>
-        console.log("Exercíco 10:")
-        console.log("Imprimindo um While regressivo:")
+        //console.log("Exercíco 10:")
+        //console.log("Imprimindo um While regressivo:")
+        let msgWhile = ""
         let i = 10
         while (i > 0) {
-            console.log(`O valor de í regressivo é ${i}`)
+            //console.log(`O valor de í regressivo é ${i}`)
+            msgWhile = msgWhile + `O valor de í regressivo é ${i}<br>`
             i--
         }
+        document.getElementById("resposta10").innerHTML = msgWhile;
+
     </script>
 
-    <p> <b>11. Percorrendo Objetos com for...in: </b></p>
+    <h3>11. Percorrendo Objetos com for...in:</h3>
     <p>
           Crie um objeto pessoa com nome, idade e cidade. Use for...in para listar suas propriedades e valores.
     </p>
+    <i><p id="resposta11">
+
+    </p></i> 
     <script>
-        console.log("Exercíco 11:")
-        console.log("Imprimindo as propriedades e valores de um objeto")
+        //console.log("Exercíco 11:")
+        //console.log("Imprimindo as propriedades e valores de um objeto")
 
         const pessoa = {nome:"Marcos Abdo Raposo",
                         idade:60,
                         cidade:"Rio de Janeiro"
         }
+        let msg = ""
         for (let dados in pessoa) {
-            console.log(`${dados}:${pessoa[dados]}`)
+            msg = msg + `${dados}:${pessoa[dados]}<br>`
+
+            // console.log(`${dados}:${pessoa[dados]}`)
         }
+        document.getElementById("resposta11").innerHTML = msg;
 
     </script>
-    <p> <b>12. Percorrendo Arrays com for...of: </b>
-    </p>
+
+    <h3>12. Percorrendo Arrays com for...of:</h3>
     <p> Crie um array de frutas e use for...of para mostrar cada fruta no console.
     </p>
+    <i><p id="resposta12"></p>
+    
     <script>
-        console.log("Exercíco 12:")
-        console.log("Imprimindo as frutas de um array")
+        //console.log("Exercíco 12:")
+        //console.log("Imprimindo as frutas de um array")
 
         let frutas = ['banana','maça','pera','abacaxi','uva']
-
+        let msgfrutas = ""
         for (const fruta of frutas) {
-            console.log(fruta) // 
+            //console.log(fruta) // 
+            msgfrutas = msgfrutas + fruta+"<br>"
         }
+        document.getElementById("resposta12").innerHTML = msgfrutas
+
     </script>
 
 </body>

@@ -9,59 +9,63 @@
 
 </head>
 <body>
-    <p><b>16. Dobrar Valores (map):</b>
-    </p>
+    <h3>16. Dobrar Valores (map):</h3>
     <p>
         Dado o array [1, 2, 3, 4, 5], use map para criar um novo array com cada número dobrado.
     </p>
+    <i><p id="resposta16"></p></i>
     <script>
-        console.log("Exercíco 16:")
+        //console.log("Exercíco 16:")
         let valores = [1,2,3,4,5]
         let dobrados = valores.map(numero => numero * 2)
-        console.log("Valores Dobrados:")
-        console.log(dobrados)
-
-
+        //console.log("Valores Dobrados:")
+        //console.log(dobrados)
+        document.getElementById("resposta16").innerHTML = "Resposta: ["+dobrados.toString()+"]"
     </script>
-    <p><b>17. Filtrar Números Pares (filter):</b>
+    <h3>17. Filtrar Números Pares (filter):</h3>
     </p>
     <p>
         Dado o array [10, 15, 20, 25, 30], use filter para criar um array apenas com números pares.
     </p>
+    <i><p id="resposta17"></p></i>
     <script>
-        console.log("Exercíco 17:")
+        //console.log("Exercíco 17:")
         let original = [10, 15, 20, 25, 30]
         let pares = original.filter(numero => numero % 2 === 0)
-        console.log("Valores Pares:")
-        console.log(pares)
+        document.getElementById("resposta17").innerHTML = "Resposta: ["+pares.toString()+"]"
+        //console.log("Valores Pares:")
+        //console.log(pares)
     </script>
 
-    <p> <b>18. Ordenação (sort): </b></p>
+    <h3>18. Ordenação (sort): </h3>
     <p>
         Dado o array [5, 1, 9, 3, 7], ordene-o em ordem crescente usando sort.
             
     </p>
+    <i><p id="resposta18"></p></i>
     <script>
-        console.log("Exercício 18:")
+        //console.log("Exercício 18:")
         const foraDeOrdem = [5, 1, 9, 3, 7]
-
         foraDeOrdem.sort()
+        document.getElementById("resposta18").innerHTML = "Resposta: ["+foraDeOrdem.toString()+"]"
 
-        console.log(foraDeOrdem)
+        //console.log(foraDeOrdem)
        
     </script>
 
-       <p> <b>19. Encadeando Métodos:</b></p>
+    <h3>19. Encadeando Métodos:</h3>
     <p>
         Dado o array [2, 5, 8, 11, 14], use filter para selecionar apenas os números maiores que 5 e depois map para multiplicá-los por 2. Mostre o resultado final.
             
     </p>
+    <i><p id="resposta19"></p></i>
     <script>
-        console.log("Exercício 19:")
+        //console.log("Exercício 19:")
         const primitivo = [2, 5, 8, 11, 14]
         const encadeado =  primitivo.filter(numero => numero > 5 ).map(numero => numero * 2)
 
-        console.log(encadeado)
+        //console.log(encadeado)
+        document.getElementById("resposta19").innerHTML = "Resposta: ["+encadeado.toString()+"]"
        
     </script>
 
